@@ -5,9 +5,8 @@ This project explores how machine learning can assist in predicting Alzheimer’
 
 The project uses a dataset of over 2,100 patients and compares different machine learning models — specifically **Support Vector Machines (SVMs)** and **Multi-Layer Perceptrons (MLPs)** — to assess their ability to classify Alzheimer’s vs. non-Alzheimer’s patients.
 
-[include project cover image here]
 
----
+
 
 ## Why This Project is Useful
 - **Early Detection:** Assists in identifying patients at risk earlier in the progression.
@@ -42,9 +41,11 @@ Before model training, several visualizations and summaries were created:
 - **Depression and Diagnosis:** Depression is more prevalent among Alzheimer’s patients.  
 - **Family History:** Not always predictive — many patients without family history still developed Alzheimer’s.  
 
-[include pic of diagnosis distribution chart here]  
-[include pic of age histogram here]  
-[include pic of education vs diagnosis chart here]  
+https://github.com/youneselkaisi/Alzheimers-Disease-Prediction-ML/blob/main/Visuals/Distribution%20by%20diagnosis.png  
+https://github.com/youneselkaisi/Alzheimers-Disease-Prediction-ML/blob/main/Visuals/Age%20distribution%20of%20patients.png 
+https://github.com/youneselkaisi/Alzheimers-Disease-Prediction-ML/blob/main/Visuals/Edu%20lvl%20by%20diagnosis.png
+https://github.com/youneselkaisi/Alzheimers-Disease-Prediction-ML/blob/main/Visuals/Alzheimers%20by%20family%20history.png
+https://github.com/youneselkaisi/Alzheimers-Disease-Prediction-ML/blob/main/Visuals/Count%20of%20patients%20w%20depression.png
 
 ---
 
