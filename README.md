@@ -3,7 +3,7 @@
 ## Overview
 This project explores how machine learning can assist in predicting Alzheimer’s Disease (AD) based on health, lifestyle, and cognitive information. Alzheimer’s is the leading form of dementia worldwide, and early detection remains a major challenge in improving care and outcomes. By applying predictive models on clinical and behavioral data, this project demonstrates how data-driven approaches can provide insights for healthcare research and early intervention strategies.
 
-The project uses a dataset of over 2,100 patients and compares different machine learning models — specifically **Support Vector Machines (SVMs)** and **Multi-Layer Perceptrons (MLPs)** — to assess their ability to classify Alzheimer’s vs. non-Alzheimer’s patients.
+The project uses a dataset of over 2,100 patients and compares different machine learning models, specifically **Support Vector Machines (SVMs)** and **Multi-Layer Perceptrons (MLPs)**, to assess their ability to classify Alzheimer’s vs. non-Alzheimer’s patients.
 
 
 
