@@ -1,13 +1,5 @@
 # Alzheimer's Disease Prediction Project
 
-## Group Statement
-We, the group members of Group #2, hereby confirm that this project was completed independently.  
-
-- Younes El-Kaisi (000929935)  
-- Yassin Elhakeem (000927776)  
-- Youssef Ayoub (000928145)  
-
----
 
 ## Overview
 This project develops a machine learning pipeline to predict Alzheimer's disease diagnosis from patient data. It combines exploratory data analysis (EDA), preprocessing, feature selection, and model training/evaluation into a reproducible workflow.  
