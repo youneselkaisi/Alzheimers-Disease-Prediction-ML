@@ -65,7 +65,7 @@ Before model training, several visualizations and summaries were created:
 ## Data Preprocessing
 Steps taken to prepare the data:
 
-- Checked for missing values (none found).  
+- Checked for missing values.  
 - Generated **correlation heatmap** to identify strong predictors.  
 - Selected **Top 10 Features** most correlated with Alzheimer’s (both positive and negative).  
 - Created a refined dataset for modelling with these features.  
