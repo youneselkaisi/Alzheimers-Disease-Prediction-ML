@@ -71,27 +71,74 @@ Steps taken to prepare the data:
 - Created a refined dataset for modelling with these features.  
 - Standardized features where necessary for SVM and MLP models.  
 
-[include screenshot of correlation heatmap here]  
-[include screenshot of top 10 features selection here]  
+ **correlation heatmap** 
+ 
+ <img width="479" height="321" alt="image" src="https://github.com/user-attachments/assets/e35f6d4f-b6cf-421f-9ba3-e922236fceb8" />
+ 
+  **Updated dataframe with new features** 
+
+ <img width="743" height="215" alt="image" src="https://github.com/user-attachments/assets/ae138c2c-117f-4fe5-9897-40c6542e87c3" />
 
 ---
 
 ## Machine Learning Models
 
 ### Support Vector Machine (SVM)
-- **Linear Kernel (Unscaled):** Achieved ~80% accuracy but struggled with recall (false negatives high).  
-- **RBF Kernel (Scaled):** Improved test accuracy to 85%, reduced false negatives, but showed signs of overfitting.  
+- **Linear Kernel (Test 1: Unscaled):** Achieved ~80% accuracy but struggled with recall (false negatives high).
+  <img width="764" height="198" alt="image" src="https://github.com/user-attachments/assets/f5608efa-30af-4371-9f6b-ecc400c12cc1" />
+<img width="454" height="72" alt="image" src="https://github.com/user-attachments/assets/15abfd35-e85c-4714-830a-059686aa4fac" />
+<img width="595" height="285" alt="image" src="https://github.com/user-attachments/assets/4971030d-5ea5-4a37-99e4-d778f32803e6" />
+<img width="867" height="629" alt="image" src="https://github.com/user-attachments/assets/05516173-7b10-4012-af85-16c5c5768c12" />
 
-[include confusion matrix for SVM models here]  
+
+ 
+
+
+
+- **RBF Kernel (Test 2: Scaled):** Improved test accuracy to 85%, reduced false negatives, but showed signs of overfitting.  
+
+<img width="1009" height="440" alt="image" src="https://github.com/user-attachments/assets/ebc96d97-9a50-412d-88e4-0f211852a8c4" />
+  <img width="588" height="219" alt="image" src="https://github.com/user-attachments/assets/ec7f5632-186a-45e9-bdd7-9120399f42d0" />
+<img width="862" height="639" alt="image" src="https://github.com/user-attachments/assets/623510b2-f17a-4bac-8892-e6ff698789cd" />
+
+#### SVM Justification:
+
+- Performs well on structured, tabular datasets like this one with a moderate number of features and observations
+
+- Effective at handling both linear and nonlinear boundaries through kernel tricks such as the RBF kernel
+
+- Well-suited for binary classification problems and benefits from standardized features, which were applied during preprocessing
 
 ### Multi-Layer Perceptron (MLP)
-- **Basic MLP (1 hidden layer):** ~86% accuracy, decent recall but still missed some cases.  
-- **Tuned MLP (2 hidden layers, adjusted learning rate):** ~90% accuracy, balanced precision and recall, best overall performance.  
+- **Basic MLP (Test 1: One hidden layer):** ~86% accuracy, decent recall but still missed some cases.  
+<img width="986" height="257" alt="image" src="https://github.com/user-attachments/assets/aba22583-c437-48c6-9ce7-4db53b3faebf" />
 
-[include screenshot of MLP loss curve here]  
-[include tuned MLP confusion matrix here]  
+<img width="795" height="588" alt="image" src="https://github.com/user-attachments/assets/1633da9a-4e9a-47ae-a52b-b10023a7a1b7" />
 
----
+<img width="850" height="621" alt="image" src="https://github.com/user-attachments/assets/29699c87-a61a-47a8-8cdd-5dd54c8acf0b" />
+
+
+
+- **Tuned MLP (Test 2: Two hidden layers, adjusted learning rate):** ~90% accuracy, balanced precision and recall, best overall performance.  
+
+<img width="843" height="122" alt="image" src="https://github.com/user-attachments/assets/2ebbee88-948b-4fe7-9cfd-ff51d3abbca2" />
+
+<img width="786" height="590" alt="image" src="https://github.com/user-attachments/assets/78693308-0a9c-40b7-9fb7-fc29fcd67725" />
+
+<img width="576" height="190" alt="image" src="https://github.com/user-attachments/assets/ac2d8b1b-22c9-4bd4-a872-13dda8978eb9" />
+
+<img width="877" height="620" alt="image" src="https://github.com/user-attachments/assets/f6ededf1-e9d9-48ae-9375-a983c9e0153c" />
+
+#### MLP Justification:
+
+- Performs well on structured datasets like this one, especially when features are a mix of standardized numeric and categorical variables
+
+- Capable of modeling complex, nonlinear relationships between cognitive, behavioral, and lifestyle-related features
+
+- Learns hierarchical feature interactions through multiple hidden layers, making it more flexible than linear models
+
+- Suitable for binary classification tasks such as Alzheimer's diagnosis prediction and benefits significantly from feature scaling, which was done during preprocessing
+
 
 ## Model Comparison
 - **SVM (Linear):** Simplest, but weakest results (~80% test accuracy).  
@@ -99,7 +146,9 @@ Steps taken to prepare the data:
 - **MLP (Default):** Good results with convergence shown in loss curve.  
 - **MLP (Tuned):** Best-performing model with ~90% test accuracy and balanced sensitivity.  
 
-[include chart comparing model accuracies here]  
+## Model comparison chart
+
+<img width="546" height="412" alt="image" src="https://github.com/user-attachments/assets/72bad492-9592-4b99-a9aa-1aaec8f1674b" />
 
 ---
 
@@ -135,3 +184,15 @@ Future work could involve:
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/alzheimers-prediction-ml.git
+
+## Acknowledgments
+
+Dataset by Rabie El Khaoura on Kaggle.
+
+Guidance from Prof. Afraz S. (Machine Learning course, Mohawk College).
+
+Libraries: scikit-learn, pandas, numpy, matplotlib, seaborn.
+
+Inspiration from healthcare ML research in NCBI
+
+
