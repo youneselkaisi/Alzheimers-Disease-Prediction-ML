@@ -1,137 +1,123 @@
-# Alzheimer's Disease Prediction Project
-
+# Alzheimer's Disease Prediction Using Machine Learning
 
 ## Overview
-This project develops a machine learning pipeline to predict Alzheimer's disease diagnosis from patient data. It combines exploratory data analysis (EDA), preprocessing, feature selection, and model training/evaluation into a reproducible workflow.  
+This project explores how machine learning can assist in predicting Alzheimer’s Disease (AD) based on health, lifestyle, and cognitive information. Alzheimer’s is the leading form of dementia worldwide, and early detection remains a major challenge in improving care and outcomes. By applying predictive models on clinical and behavioral data, this project demonstrates how data-driven approaches can provide insights for healthcare research and early intervention strategies.
 
-Alzheimer’s disease is one of the most pressing global health challenges. Early detection enables interventions that may significantly improve patient outcomes. By analyzing clinical, demographic, and lifestyle data, this project demonstrates how data science and predictive modeling can complement medical expertise.  
+The project uses a dataset of over 2,100 patients and compares different machine learning models — specifically **Support Vector Machines (SVMs)** and **Multi-Layer Perceptrons (MLPs)** — to assess their ability to classify Alzheimer’s vs. non-Alzheimer’s patients.
 
-[include project logo or relevant image here]
+[include project cover image here]
+
+---
+
+## Why This Project is Useful
+- **Early Detection:** Assists in identifying patients at risk earlier in the progression.
+- **Feature Insights:** Reveals which medical, lifestyle, and cognitive variables are most correlated with Alzheimer’s.
+- **Model Comparisons:** Highlights the strengths and weaknesses of traditional classifiers (SVM) vs. neural networks (MLP).
+- **Healthcare Applications:** Serves as a foundation for applying AI/ML techniques in clinical prediction tasks.
 
 ---
 
 ## Dataset
-- **Name:** Alzheimer’s Disease Dataset  
-- **Source:** [Kaggle – Alzheimer’s Disease Dataset](https://www.kaggle.com/datasets/rabieelkharoua/alzheimers-disease-dataset/data)  
-- **Author:** Rabie El Khaoura  
-- **License:** Attribution 4.0 International  
+The dataset is sourced from **Kaggle** (created by *Rabie El Khaoura*).  
+It includes **2,149 patients** with **35 features** spanning demographics, lifestyle, medical history, and cognitive/behavioural metrics.
 
-### Dataset Description
-- **Rows:** 2,149 patients  
-- **Columns:** 35 features including demographics, lifestyle, clinical measurements, cognitive assessments, and diagnosis status  
+Dataset link: [Alzheimer’s Disease Dataset](https://www.kaggle.com/datasets/rabieelkharoua/alzheimers-disease-dataset)
 
-Examples of relevant features:  
-- **Demographics:** `Age`, `Gender`, `Ethnicity`, `EducationLevel`  
-- **Lifestyle:** `Smoking`, `AlcoholConsumption`, `PhysicalActivity`, `DietQuality`, `SleepQuality`  
-- **Clinical Measurements:** `SystolicBP`, `DiastolicBP`, `CholesterolTotal`, `CholesterolLDL`, `CholesterolHDL`, `CholesterolTriglycerides`, `BMI`  
-- **Cognitive Assessments:** `MMSE`, `FunctionalAssessment`, `ADL`, `MemoryComplaints`, `Forgetfulness`  
-- **Diagnosis:** Target variable (`0` = No Alzheimer’s, `1` = Alzheimer’s)  
-
-[include screenshot of dataset head here]
+**Feature Categories:**
+- Demographics: Age, Gender, Ethnicity, Education
+- Lifestyle Factors: Smoking, Alcohol, Diet, Sleep, Physical Activity
+- Medical History: Diabetes, Depression, Hypertension, Cardiovascular Disease
+- Clinical Measurements: Blood Pressure, Cholesterol levels
+- Cognitive & Behavioral: MMSE scores, Forgetfulness, ADL (Activities of Daily Living), Memory Complaints, Behavioural Problems
+- Target Variable: Diagnosis (0 = No Alzheimer’s, 1 = Alzheimer’s)
 
 ---
 
-## Project Workflow
+## Exploratory Data Analysis (EDA)
+Before model training, several visualizations and summaries were created:
 
-### Part 1: Data Exploration
-- Loaded the dataset using Pandas and inspected shape, columns, data types, and summary statistics.  
+- **Class Balance:** 35% Alzheimer’s, 65% No Alzheimer’s.  
+- **Age Distribution:** Majority between 80–90 years old.  
+- **Education vs Diagnosis:** Higher education levels correlate with lower Alzheimer’s rates.  
+- **Depression and Diagnosis:** Depression is more prevalent among Alzheimer’s patients.  
+- **Family History:** Not always predictive — many patients without family history still developed Alzheimer’s.  
+
+[include pic of diagnosis distribution chart here]  
+[include pic of age histogram here]  
+[include pic of education vs diagnosis chart here]  
+
+---
+
+## Data Preprocessing
+Steps taken to prepare the data:
+
 - Checked for missing values (none found).  
-- Conducted EDA through visualizations such as:
-  - Histogram of patient ages  
-  - Pie chart for gender distribution  
-  - Bar chart for ethnicity breakdown  
-  - Distribution of **MMSE** scores (indicator of cognitive decline)  
-  - Comparison of **MMSE scores for forgetful vs. non-forgetful patients**  
-  - Stacked bar chart of education level vs. Alzheimer’s diagnosis  
-  - Line plot of average ADL (Activities of Daily Living) scores by age  
-  - Bar chart for prevalence of depression among patients  
-  - Alzheimer’s cases by family history  
-  - Overall diagnosis distribution (pie chart)  
+- Generated **correlation heatmap** to identify strong predictors.  
+- Selected **Top 10 Features** most correlated with Alzheimer’s (both positive and negative).  
+- Created a refined dataset for modelling with these features.  
+- Standardized features where necessary for SVM and MLP models.  
 
-[include screenshot of Age distribution plot]  
-[include screenshot of MMSE forgetfulness comparison plot]  
-[include screenshot of education level by diagnosis stacked bar]  
+[include screenshot of correlation heatmap here]  
+[include screenshot of top 10 features selection here]  
 
 ---
 
-### Part 2: Data Preprocessing
-- Dropped irrelevant identifiers (`PatientID`, `DoctorInCharge`).  
-- Created a correlation heatmap to identify features most related to Alzheimer’s diagnosis.  
-- Selected top correlated features including:  
-  `FunctionalAssessment`, `ADL`, `MMSE`, `MemoryComplaints`, `BehavioralProblems`, `DietQuality`, `SleepQuality`, `PhysicalActivity`, `CholesterolTotal`, `EducationLevel`.  
-- Constructed a reduced DataFrame (`df2`) for modeling.  
+## Machine Learning Models
 
-[include screenshot of correlation heatmap here]
+### Support Vector Machine (SVM)
+- **Linear Kernel (Unscaled):** Achieved ~80% accuracy but struggled with recall (false negatives high).  
+- **RBF Kernel (Scaled):** Improved test accuracy to 85%, reduced false negatives, but showed signs of overfitting.  
 
----
+[include confusion matrix for SVM models here]  
 
-### Part 3: Modeling
+### Multi-Layer Perceptron (MLP)
+- **Basic MLP (1 hidden layer):** ~86% accuracy, decent recall but still missed some cases.  
+- **Tuned MLP (2 hidden layers, adjusted learning rate):** ~90% accuracy, balanced precision and recall, best overall performance.  
 
-#### Model 1: Support Vector Machine (SVM)
-- Used `train_test_split` to divide the dataset (75% train, 25% test).  
-- Trained a **linear kernel SVM** with `C=0.01` and `max_iter=1000`.  
-- Evaluated using accuracy and classification report.  
-
-**Results (SVM):**  
-- Train Accuracy: ~82%  
-- Test Accuracy: ~80%  
-- Precision/Recall trade-offs observed:  
-  - Class `0` (No Alzheimer’s) predicted with higher precision and recall.  
-  - Class `1` (Alzheimer’s) slightly under-predicted but still reasonable performance.  
-
-[include screenshot of classification report here]
-
-- Visualized a **confusion matrix** to show true positives/false positives/false negatives.  
-
-[include confusion matrix plot here]
-
-#### Other Models
-In addition to SVM, further tests included:  
-- Logistic Regression  
-- Random Forest  
-- Gradient Boosting (if used)  
-- (Optional) Neural Networks  
-
-Each was compared based on accuracy, interpretability, and generalization.  
-
-[include loss curve screenshot here if neural nets applied]  
-[include feature importance plot here for tree-based models]
+[include screenshot of MLP loss curve here]  
+[include tuned MLP confusion matrix here]  
 
 ---
 
-## Results and Insights
-- **SVM** achieved ~80% accuracy on test data, making it a strong baseline model.  
-- Correlation analysis highlighted that **FunctionalAssessment**, **ADL**, and **MMSE** are the most critical predictors.  
-- Lifestyle variables like **DietQuality**, **SleepQuality**, and **PhysicalActivity** also contribute to diagnosis likelihood.  
-- Patients with family history and comorbidities (e.g., depression) showed higher Alzheimer’s prevalence.  
+## Model Comparison
+- **SVM (Linear):** Simplest, but weakest results (~80% test accuracy).  
+- **SVM (RBF + Standardization):** Stronger but prone to overfitting.  
+- **MLP (Default):** Good results with convergence shown in loss curve.  
+- **MLP (Tuned):** Best-performing model with ~90% test accuracy and balanced sensitivity.  
 
-Key takeaway: Combining **cognitive assessment scores** with **lifestyle and clinical metrics** provides a strong predictive basis for Alzheimer’s diagnosis.  
+[include chart comparing model accuracies here]  
+
+---
+
+## Key Insights
+- Standardization significantly improves performance for both SVM and MLP.  
+- Neural networks (MLP) were more effective than linear classifiers for this dataset.  
+- Education level, MMSE, sleep quality, and memory complaints were among the most predictive features.  
+- The tuned MLP achieved the best balance between accuracy and generalization.  
+- False negatives remain the most concerning error type in medical contexts, underscoring the importance of recall.  
+
+---
+
+## Conclusion
+This project demonstrates the potential of machine learning in predicting Alzheimer’s Disease using real-world patient data. While no model is perfect, the tuned MLP achieved the most promising results with nearly 90% accuracy. Beyond accuracy, the project highlights the importance of feature selection, data preprocessing, and balancing interpretability with predictive power.  
+
+Future work could involve:
+- Incorporating larger and more diverse datasets.  
+- Testing advanced neural network architectures (e.g., CNNs, LSTMs).  
+- Applying explainable AI techniques to understand how features contribute to predictions.  
 
 ---
 
 ## Libraries Used
-- **pandas**: data manipulation  
-- **numpy**: numerical computation  
-- **matplotlib**: visualizations  
-- **seaborn**: statistical plotting (if used)  
-- **scikit-learn**: preprocessing, model training & evaluation  
-
-[include screenshot of imports section from notebook]
+- **Python 3.10+**
+- **Pandas** (data cleaning & wrangling)  
+- **NumPy** (numerical operations)  
+- **Matplotlib & Seaborn** (visualizations, EDA)  
+- **Scikit-learn** (SVM, MLP, model evaluation)  
 
 ---
 
-## Usage
-To run this project locally:  
-
-```bash
-# Clone the repository
-git clone https://github.com/your-username/alzheimers-prediction.git
-
-# Navigate to directory
-cd alzheimers-prediction
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Open the notebook
-jupyter notebook
+## How to Use
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/alzheimers-prediction-ml.git
