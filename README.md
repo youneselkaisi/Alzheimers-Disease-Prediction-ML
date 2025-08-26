@@ -41,12 +41,24 @@ Before model training, several visualizations and summaries were created:
 - **Depression and Diagnosis:** Depression is more prevalent among Alzheimer’s patients.  
 - **Family History:** Not always predictive — many patients without family history still developed Alzheimer’s.  
 
-Visuals/Distribution by diagnosis.png
-https://github.com/youneselkaisi/Alzheimers-Disease-Prediction-ML/blob/main/Visuals/Distribution%20by%20diagnosis.png  
-https://github.com/youneselkaisi/Alzheimers-Disease-Prediction-ML/blob/main/Visuals/Age%20distribution%20of%20patients.png 
-https://github.com/youneselkaisi/Alzheimers-Disease-Prediction-ML/blob/main/Visuals/Edu%20lvl%20by%20diagnosis.png
-https://github.com/youneselkaisi/Alzheimers-Disease-Prediction-ML/blob/main/Visuals/Alzheimers%20by%20family%20history.png
-https://github.com/youneselkaisi/Alzheimers-Disease-Prediction-ML/blob/main/Visuals/Count%20of%20patients%20w%20depression.png
+
+## Visualizations
+
+### Distribution by Diagnosis
+![Distribution by diagnosis](https://github.com/youneselkaisi/Alzheimers-Disease-Prediction-ML/blob/main/Visuals/Distribution%20by%20diagnosis.png?raw=true)
+
+### Age Distribution of Patients
+![Age distribution of patients](https://github.com/youneselkaisi/Alzheimers-Disease-Prediction-ML/blob/main/Visuals/Age%20distribution%20of%20patients.png?raw=true)
+
+### Education Level by Diagnosis
+![Education level by diagnosis](https://github.com/youneselkaisi/Alzheimers-Disease-Prediction-ML/blob/main/Visuals/Edu%20lvl%20by%20diagnosis.png?raw=true)
+
+### Alzheimer's by Family History
+![Alzheimer's by family history](https://github.com/youneselkaisi/Alzheimers-Disease-Prediction-ML/blob/main/Visuals/Alzheimers%20by%20family%20history.png?raw=true)
+
+### Count of Patients with Depression
+![Count of patients with depression](https://github.com/youneselkaisi/Alzheimers-Disease-Prediction-ML/blob/main/Visuals/Count%20of%20patients%20w%20depression.png?raw=true)
+
 
 ---
 
