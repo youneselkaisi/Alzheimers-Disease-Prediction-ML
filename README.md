@@ -191,6 +191,8 @@ Dataset by Rabie El Khaoura on Kaggle.
 
 Guidance from Prof. Afraz S. (Machine Learning course, Mohawk College).
 
+Project members: Younes El-Kaisi, Yassin Elhakeem, Youssef Ayoub.
+
 Libraries: scikit-learn, pandas, numpy, matplotlib, seaborn.
 
 Inspiration from healthcare ML research in NCBI
