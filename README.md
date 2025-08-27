@@ -85,10 +85,10 @@ Steps taken to prepare the data:
 
 ### Support Vector Machine (SVM)
 - **Linear Kernel (Test 1: Unscaled):** Achieved ~80% accuracy but struggled with recall (false negatives high).
-  <img width="764" height="198" alt="image" src="https://github.com/user-attachments/assets/f5608efa-30af-4371-9f6b-ecc400c12cc1" />
+  <img width="600" height="198" alt="image" src="https://github.com/user-attachments/assets/f5608efa-30af-4371-9f6b-ecc400c12cc1" />
 <img width="454" height="72" alt="image" src="https://github.com/user-attachments/assets/15abfd35-e85c-4714-830a-059686aa4fac" />
 <img width="595" height="285" alt="image" src="https://github.com/user-attachments/assets/4971030d-5ea5-4a37-99e4-d778f32803e6" />
-<img width="867" height="629" alt="image" src="https://github.com/user-attachments/assets/05516173-7b10-4012-af85-16c5c5768c12" />
+<img width="600" height="629" alt="image" src="https://github.com/user-attachments/assets/05516173-7b10-4012-af85-16c5c5768c12" />
 
 
  
