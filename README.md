@@ -97,9 +97,9 @@ Steps taken to prepare the data:
 
 - **RBF Kernel (Test 2: Scaled):** Improved test accuracy to 85%, reduced false negatives, but showed signs of overfitting.  
 
-<img width="1009" height="440" alt="image" src="https://github.com/user-attachments/assets/ebc96d97-9a50-412d-88e4-0f211852a8c4" />
+<img width="600" height="440" alt="image" src="https://github.com/user-attachments/assets/ebc96d97-9a50-412d-88e4-0f211852a8c4" />
   <img width="588" height="219" alt="image" src="https://github.com/user-attachments/assets/ec7f5632-186a-45e9-bdd7-9120399f42d0" />
-<img width="862" height="639" alt="image" src="https://github.com/user-attachments/assets/623510b2-f17a-4bac-8892-e6ff698789cd" />
+<img width="620" height="639" alt="image" src="https://github.com/user-attachments/assets/623510b2-f17a-4bac-8892-e6ff698789cd" />
 
 #### SVM Justification:
 
@@ -111,23 +111,23 @@ Steps taken to prepare the data:
 
 ### Multi-Layer Perceptron (MLP)
 - **Basic MLP (Test 1: One hidden layer):** ~86% accuracy, decent recall but still missed some cases.  
-<img width="986" height="257" alt="image" src="https://github.com/user-attachments/assets/aba22583-c437-48c6-9ce7-4db53b3faebf" />
+<img width="620" height="257" alt="image" src="https://github.com/user-attachments/assets/aba22583-c437-48c6-9ce7-4db53b3faebf" />
 
-<img width="795" height="588" alt="image" src="https://github.com/user-attachments/assets/1633da9a-4e9a-47ae-a52b-b10023a7a1b7" />
+<img width="620" height="588" alt="image" src="https://github.com/user-attachments/assets/1633da9a-4e9a-47ae-a52b-b10023a7a1b7" />
 
-<img width="850" height="621" alt="image" src="https://github.com/user-attachments/assets/29699c87-a61a-47a8-8cdd-5dd54c8acf0b" />
+<img width="620" height="621" alt="image" src="https://github.com/user-attachments/assets/29699c87-a61a-47a8-8cdd-5dd54c8acf0b" />
 
 
 
 - **Tuned MLP (Test 2: Two hidden layers, adjusted learning rate):** ~90% accuracy, balanced precision and recall, best overall performance.  
 
-<img width="843" height="122" alt="image" src="https://github.com/user-attachments/assets/2ebbee88-948b-4fe7-9cfd-ff51d3abbca2" />
+<img width="620" height="122" alt="image" src="https://github.com/user-attachments/assets/2ebbee88-948b-4fe7-9cfd-ff51d3abbca2" />
 
-<img width="786" height="590" alt="image" src="https://github.com/user-attachments/assets/78693308-0a9c-40b7-9fb7-fc29fcd67725" />
+<img width="620" height="590" alt="image" src="https://github.com/user-attachments/assets/78693308-0a9c-40b7-9fb7-fc29fcd67725" />
 
 <img width="576" height="190" alt="image" src="https://github.com/user-attachments/assets/ac2d8b1b-22c9-4bd4-a872-13dda8978eb9" />
 
-<img width="877" height="620" alt="image" src="https://github.com/user-attachments/assets/f6ededf1-e9d9-48ae-9375-a983c9e0153c" />
+<img width="600" height="620" alt="image" src="https://github.com/user-attachments/assets/f6ededf1-e9d9-48ae-9375-a983c9e0153c" />
 
 #### MLP Justification:
 
